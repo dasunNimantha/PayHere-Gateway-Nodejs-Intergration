@@ -1,30 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Checkout Form </title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
+    <style>
+        body {
+            background: #EECDA3;
+            background: -webkit-linear-gradient(to top, #EF629F, #EECDA3);
+            background: linear-gradient(to top, #EF629F, #EECDA3);
+        }
+
+        .container {
+            max-width: 550px;
+        }
+
+        .has-error label,
+        .has-error input,
+        .has-error textarea {
+            color: red;
+            border-color: red;
+        }
+
+        .list-unstyled li {
+            font-size: 13px;
+            padding: 4px 0 0;
+            color: red;
+        }
+    </style>
 </head>
+
 <body>
-    <form action="https://sandbox.payhere.lk/pay/checkout" method="POST">
-        <input type="hidden" name="merchant_id" value="1217175">    <!-- Replace your Merchant ID -->
+    <div class="container mt-5">
+        <div class="card">
+            <h5 class="card-header text-center">Checkout</h5>
+            <div class="card-body">
+                <form role="form" data-toggle="validator" action="https://sandbox.payhere.lk/pay/checkout" method="POST">
+
+
+                    <input type="hidden" name="merchant_id" value="1217175">    <!-- Replace with your Merchant ID -->
     <input type="hidden" name="return_url" value="https://paynowd.herokuapp.com/return">
     <input type="hidden" name="cancel_url" value="https://paynowd.herokuapp.com/cancel">
     <input type="hidden" name="notify_url" value="https://paynowd.herokuapp.com/notify">  
-    <input type="text" name="order_id" value="ItemNo12345">
-    <input type="text" name="items" value="Door bell wireless"><br>
-    <input type="text" name="currency" value="LKR">
-    <input type="text" name="amount" value="1000">  
-   
-    <input type="text" name="first_name" value="Saman">
-    <input type="text" name="last_name" value="Perera"><br>
-    <input type="text" name="email" value="samanp@gmail.com">
-    <input type="text" name="phone" value="0771234567"><br>
-    <input type="text" name="address" value="No.1, Galle Road">
-    <input type="text" name="city" value="Colombo">
-    <input type="hidden" name="country" value="Sri Lanka"><br><br> 
-    <input type="submit" name="" id="" value="Pay">
-    </form>
+
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" data-error="You must have a name." id="inputName" name="first_name" value="Dasun">
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" name="last_name" value="Nimantha"
+                            pattern="^[a-zA-Z0-9_.-]*$" id="inputUsername" >
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                        
+                        <input type="email" class="form-control" id="inputEmail" name="email" value="dasunnimanthaperera@gmail.com" hidden>
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                       
+                        <input type="text" class="form-control" name="order_id" value="Item-1234" hidden>
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                        
+                        <input type="text" class="form-control" name="currency" value="LKR" hidden>
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Item</label>
+                        <input type="text" class="form-control" name="items" value="Galaxy M31">
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="text" class="form-control" name="amount" value="52000">
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" name="phone" value="+9476123456">
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" class="form-control" name="address" value="1654/A/2,Colombo">
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                        
+                        <input type="text" class="form-control" name="city" value="Colombo" hidden>
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                       
+                        <input type="text" class="form-control" name="country" value="Sri Lanka" hidden>
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Pay Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

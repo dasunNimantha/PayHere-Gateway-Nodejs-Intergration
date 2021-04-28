@@ -4,9 +4,10 @@ const bodyParser = require('body-parser');
 const md5 = require('md5');
 const dotenv = require('dotenv');
 
+var test = false;
 dotenv.config();
 app.set('view engine', 'ejs');
-
+app.use(express.static(__dirname+'/public'))
 app.use(
     express.urlencoded({
       extended: true
@@ -52,6 +53,7 @@ app.post('/notify',async(req,res)=>{
            var localMd5Sig = (md5(merchant_id+order_id+payhere_amount+payhere_currency+status_code+md5(process.env.PAYHERE_SECRET).toUpperCase())).toUpperCase();
            if(localMd5Sig===req.body.md5sig){
                 console.log('Verified')
+                test=true;
                // update the database with successfull transation details here
            } else {
                 console.log("Unverified")
@@ -68,22 +70,20 @@ app.post('/notify',async(req,res)=>{
             console.log("Charged Back");
             break;
         default:
-            console.log("Unknown Error");     
-            
+            console.log("Unknown Error");               
    }
-
    res.end();
 })
 
-app.get('/return',(req,res)=>{
-    res.send('success');
-})
-
-app.get('/api',async(req,res)=>{
+app.get('/api',(req,res)=>{
     res.send(test)
 })
 
-app.listen(process.env.PORT,()=>{
+app.get('/return',(req,res)=>{    // redirect url after the transaction..(provided in the html form )
+    res.send('success');
+})
+
+app.listen(3000 || process.env.PORT,()=>{
     console.log("Listening on port 3000");
 })
 
