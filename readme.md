@@ -90,10 +90,12 @@ How to test a payment on Sandbox Mode?
 
      Any card except the above test cards will result in a failed payment.
 
+3. After the transaction is completed you can send a "POST" api request to `yourdomain/check` to verify the payment response.
+   However for the security concerns,payhere is not sending a notify_url for http connections.
+ Therefore you need to have ssl certified domain to check the response verification. 
+ 
 ![alt text](https://github.com/dasunNimantha/PayHere-Gateway-for-Nodejs/blob/master/screenshots/1.png?raw=true)
 
 ![alt text](https://github.com/dasunNimantha/PayHere-Gateway-for-Nodejs/blob/master/screenshots/2.png?raw=true)
 
-3. After the transaction is completed you can send a "POST" api request to `yourdomain/check` to verify the payment response.
-   However for the security concerns,payhere is not sending a notify_url for http connections.
- Therefore you need to have ssl certified domain to check the response verification. 
+
