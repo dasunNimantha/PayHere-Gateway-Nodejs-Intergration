@@ -83,7 +83,7 @@ app.get('/return',(req,res)=>{    // redirect url after the transaction..(provid
     res.send('success');
 })
 
-app.listen(3000 || process.env.PORT,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("Listening on port 3000");
 })
 
