@@ -1,4 +1,4 @@
-# PayHere Payment Gateway for Sri Lankan Users
+# A Payment Gateway for Sri Lankan Users
 
 This is a payment gateway that created specifically for Sri Lankan users,using express framework and PayHere SDK...
 
