@@ -37,8 +37,9 @@ node app
        Merchant Secret can be generated for your domain/app as follows
                    1. Go to Settings > Domains & Credentials
                    2. Click 'Add Domain/App' > Fill details > Click 'Request to Allow'
-                   3. Wait for the approval for your domain
-                   4. Copy the Merchant Secret for your domain/app
+                   3. Enter 127.0.0.1:3000 to the domain for sandbox
+                   4. Wait for the approval for your domain
+                   5. Copy the Merchant Secret for your domain/app
 * Note: Merchant Secrets are domain/app specific, therefore you need 
 to generate a new Merchant Secret every time you're integrating PayHere on a new domain/app.
 
