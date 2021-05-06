@@ -15,10 +15,11 @@ For more information: [payhere.lk](https://www.payhere.lk/)
 
 ## Installation
 
-Clone the git repository
+Clone the git repository and install dependancies
 
 ```bash
 git clone https://github.com/dasunNimantha/PayHere-Gateway-for-Nodejs.git
+node install
 ```
 
 Start node server running on [http://127.0.0.1:3000]() using :
