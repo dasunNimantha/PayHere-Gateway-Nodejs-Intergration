@@ -19,7 +19,7 @@ Clone the git repository and install dependancies
 
 ```bash
 git clone https://github.com/dasunNimantha/PayHere-Gateway-for-Nodejs.git
-node install
+npm install
 ```
 
 Start node server running on [http://127.0.0.1:3000]() using :
