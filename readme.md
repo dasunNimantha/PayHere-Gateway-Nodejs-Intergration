@@ -1,6 +1,6 @@
-# A Payment Gateway for Sri Lankan Users
+# Nodejs Implementation of PayHere
 
-This is a payment gateway that created specifically for Sri Lankan users,using express framework and PayHere SDK...
+This is a payment gateway intergration that created specifically for Sri Lankan users,using express framework and PayHere SDK...
 
 PayHere stays on the leading edge of safety and security. By partnering with Sampath Bank PLC with the approval of Central Bank, PayHere offers layers of trustable security.
 
